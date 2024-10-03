@@ -32,8 +32,9 @@ class Car {
   }
 
   void carMove() {
-    if (mousePressed) {
+    if (mousePressed) {   //Restart by mousepress
       x = 0;
+      frameCount = 0;
     } else {
       x = x + random(0.5, 4);
       if ((x > width)) {

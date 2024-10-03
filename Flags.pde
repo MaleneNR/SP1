@@ -1,7 +1,7 @@
 class Flags {
   int y;
-    int flagHeight = 15;
-    int flagWidth = 20;
+  int flagHeight = 15;
+  int flagWidth = 20;
 
   Flags(int y) {
     this.y = y;
@@ -26,5 +26,4 @@ class Flags {
     }
     noStroke();
   }
-
 }

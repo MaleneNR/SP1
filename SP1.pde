@@ -14,12 +14,14 @@ void setup() {
   int roadStartYPosition = (height/3)*2;
   int roadHeight = height/4;
 
+
   //Declaring 5 cars by an array
   cars = new Car[5];
   int spaceBetweenCars = 28;
   for (int i = 0; i < cars.length; i++) {
     cars[i] = new Car(0, roadStartYPosition+(spaceBetweenCars*i), color (random(255), random(255), random(255)));
   }
+
 
   //Making instances of Road, Flags, Sky, and Trafficlight.
   myRoad = new Road(0, roadStartYPosition, width, roadHeight);
@@ -29,6 +31,7 @@ void setup() {
   sky3 = new Sky(45);
   trafficlight = new Trafficlight(width-100, height/4, 35, 100);
 }
+
 
 
 void draw() {
@@ -57,11 +60,13 @@ void draw() {
     c.displayCar();
   }
 
-  if (frameCount == 300) {
-    println("Start!");
+
+  int carsStartAtGreenLight = 200;
+  if (frameCount == carsStartAtGreenLight) {
+    println("Go!");
   }
 
-  if (frameCount >= 300) {
+  if (frameCount >= carsStartAtGreenLight) {
     for (Car c : cars) {
       c.carMove();
     }
